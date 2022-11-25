@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SoliCode</title>
+</head>
+<body>
+        <form id="form" class="clubs">
+            <h1>Renseigner votre information au dessous</h1>
+            <input type="text" placeholder="Nom" id="nom">
+            <p id="message"></p>
+            <input type="text" placeholder="Prénom" id="prenom">
+            <p id="msg"></p>
+            <input type="email" placeholder="addresse Email" id="email">
+            <p id="error"></p>
+            <input type="tel" placeholder="Numéro de Téléphone" id="tele">
+            <p id="mg"></p>
+            <h2>Genre</h2>
+            <div class="genre">
+                <label> Masculin</label>
+                <input class="check" type="radio" value="Masculin" id="Masculin" name="M">
+                <label> Féminin </label>
+                <input class="check" type="radio" value="Féminin" id="Féminin" name="M">
+                <p id="err"></p>
+            </div>
+            <h2>Groupes</h2>
+            <div class="Group">
+                <input type="radio" name="DW101" id="DW1">
+                <label>DW101</label>
+                <input type="radio" name="DW101" id="DW2">
+                <label>DW102</label>
+                <input type="radio" name="DW101" id="DW3">
+                <label>DW103</label>
+                <input type="radio" name="DW101" id="DW4">
+                <label>DM101</label>
+                <input type="radio" name="DW101" id="DW5">
+                <label>DM102</label>
+                <p id="er"></p>
+            </div>
+            <h2>Clubs</h2>
+            <select id="sel" multiple>
+                <option value="Informatique">Informatique</option>
+                <option value="Robotique">Robotique</option>
+                <option value="Jeu d'échecs">Jeu d'échecs</option>
+                <option value="Musique">Musique</option>
+                <option value="Foot">Foot</option>
+                <option value="Théatre">Théatre</option>
+            </select>
+            <p id="resultClub"></p>
+
+            <button id="btn">envoyer</button>
+        </form>
+
+      
+        <script src="javascript.js"></script>
+
+</body>
+
+</html>
