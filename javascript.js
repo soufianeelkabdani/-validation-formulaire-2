@@ -1,4 +1,3 @@
-const Form = document.getElementById('form');
 const username  = document.getElementById('nom');
 const lastname  = document.getElementById('prenom');
 const email  = document.getElementById('email');
@@ -9,17 +8,17 @@ const w1  = document.getElementById('DW1');
 const w2  = document.getElementById('DW2');
 const w3  = document.getElementById('DW3');
 const w4  = document.getElementById('DW4');
-const w5  = document.getElementById('DW5');
+const w5 = document.getElementById('DW5');
+let Submit_Btn = document.getElementById("btn");
 
+let arr = [] ;
 
-
-Form.addEventListener('submit', (e)=>{
+Submit_Btn.addEventListener('click', (e)=>{
     e.preventDefault();
-    
     checkinputs();
-    window.open(href = 'valid.html', target = '_blank');
-
-    
+    if (arr.length === 6) {
+        window.open(href = 'valid.html', target = '_blank');
+    }
 });
 
 function checkinputs(){
@@ -31,7 +30,6 @@ function checkinputs(){
 
 
     if (usernameValue === '') {
-        // console.log('invalid');
         document.querySelector('#message').innerText = 'invalid';
 
     }else if(usernameValue.length <= 3 || usernameValue.length > 30 ){
@@ -41,6 +39,7 @@ function checkinputs(){
         document.querySelector('#message').innerText = 'sauf les alphabets';
     }else{
         document.querySelector('#message').innerText = '';
+        arr.push(true);
         
     }
     // valider prénom
@@ -55,6 +54,7 @@ function checkinputs(){
         document.querySelector('#msg').innerText = 'sauf les alphabets';
     }else{
         document.querySelector('#msg').innerText = '';
+        arr.push(true);
         
     }
      // valider Email
@@ -66,7 +66,7 @@ function checkinputs(){
         document.querySelector('#error').innerText = 'gmail invalid';
     }else{
         document.querySelector('#error').innerText = '';
-        
+         arr.push(true);
     }
 
       // valider Telephone
@@ -78,7 +78,7 @@ function checkinputs(){
         document.querySelector('#mg').innerText = 'commence par 05 ou 06 ou 07';
     }else{
         document.querySelector('#mg').innerText = '';
-        
+        arr.push(true);
     }
     // valid check
     if(masc.checked == true || femin.checked == true){
@@ -88,13 +88,13 @@ function checkinputs(){
     }
      // valid check Groupe
      if(w1.checked == true || w2.checked == true || w3.checked == true || w4.checked == true || w5.checked == true){
-        document.querySelector('#er').innerText = '';
+         document.querySelector('#er').innerText = '';
+         arr.push(true);
     }else{
         document.querySelector('#er').innerText = 'please check';
     }
     // valid check Clubs
        
-    const arr = [] ;
     let resultClub = document.querySelector("#resultClub");
 
     if(sel.selectedOptions.length === 0){
@@ -106,8 +106,6 @@ function checkinputs(){
         resultClub.innerHTML=" " ;
         arr.push(true);
     } 
-    
-
 }
      
 const novalid = (username) =>{
